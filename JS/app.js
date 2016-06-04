@@ -4,7 +4,7 @@ var articleContent = [];
 function ArticleObj(art) {
   this.title = art.this;
   this.imgName = art.imgName;
-  this.imgPath = '/__/_' + art.imgName + '__.jpg';
+  this.imgPath = 'Images/' + art.imgName + '.jpg';
   this.about = art.about;
   this.link = art.link;
   articleContent.push(this);
