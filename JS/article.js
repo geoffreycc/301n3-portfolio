@@ -1,6 +1,3 @@
-// Content for Articles Here
-
-// arary of objects
 var articles = [
   {
     title: 'Pug Test',

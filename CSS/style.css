@@ -1,3 +1,10 @@
-/*Center Content
-Title Header Area
-Separate Formatting for Articles*/
+body {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+article {
+  text-align: left;
+  border: .05em solid black;
+}

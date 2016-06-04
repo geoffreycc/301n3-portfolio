@@ -2,7 +2,7 @@
 var articleContent = [];
 
 function ArticleObj(art) {
-  this.title = art.this;
+  this.title = art.title;
   this.imgName = art.imgName;
   this.imgPath = 'Images/' + art.imgName + '.jpg';
   this.about = art.about;
@@ -16,7 +16,7 @@ ArticleObj.prototype.contentDisplay = function () {
   $section.find('h2').text(this.title);
   $section.find('img').attr('src', this.imgPath);
   $section.find('p').html(this.about);
-  $section.find('a').attr('href', this.link);
+  $section.find('a').attr('href', this.link).text(this.title + ' Repository');
 
   $section.removeClass('newArticle');
 
@@ -31,8 +31,3 @@ articles.forEach(function(ele){
 articleContent.forEach(function(ar) {
   $('#projects').append(ar.contentDisplay());
 });
-// toHtml function -- prototype of ArticleObj
-// grab article section and clone it
-// find the different parts of the cloned section and plug in content
-
-// .forEach create new ArticleObj objects and run them through toHtml method
