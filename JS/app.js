@@ -11,7 +11,7 @@ function ArticleObj(art) {
 };
 
 ArticleObj.prototype.contentDisplay = function () {
-  var $section = $('newArticle').clone();
+  var $section = $('.newArticle').clone();
 
   $section.find('h2').text(this.title);
   $section.find('img').attr('src', this.imgPath);
@@ -29,7 +29,7 @@ articles.forEach(function(ele){
 });
 
 articleContent.forEach(function(ar) {
-  $('projects').append(ar.contentDisplay());
+  $('#projects').append(ar.contentDisplay());
 });
 // toHtml function -- prototype of ArticleObj
 // grab article section and clone it
