@@ -19,13 +19,13 @@ ArticleObj.prototype.contentDisplay = function () {
   $section.find('a').attr('href', this.link).text(this.title + ' Repository');
 
   $section.removeClass('newArticle');
+  $section.addClass('articleContent');
 
   return $section;
 };
 
 articles.forEach(function(ele){
   var art = new ArticleObj(ele);
-  console.log(art);
 });
 
 articleContent.forEach(function(ar) {
