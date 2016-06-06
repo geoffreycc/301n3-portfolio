@@ -21,7 +21,6 @@ articleDisplay.populateFilters = function() {
 articleDisplay.authorSort = function() {
   $('#author-sort').on('change', function() {
     var $authChoice = $(this).val();
-    console.log($authChoice);
     $('article').hide();
     if ($authChoice) {
       $('article[data-author="' + $authChoice + '"]').fadeIn(500);
@@ -30,12 +29,19 @@ articleDisplay.authorSort = function() {
     }
     $('#category-sort').val('');
   });
-//Show only selected author's articles.
 };
 
 articleDisplay.categorySort = function() {
-//Show only selected category artiles
-  $('#category-sort');
+  $('#category-sort').on('change', function() {
+    var $catChoice = $(this).val();
+    $('article').hide();
+    if ($catChoice) {
+      $('article[data-category="' + $catChoice + '"]').fadeIn(500);
+    } else {
+      $('.articleContent').fadeIn(500);
+    }
+    $('#author-sort').val('');
+  });
 };
 
 articleDisplay.topNavBar = function() {
@@ -50,5 +56,6 @@ articleDisplay.teaserControl = function() {
 $(document).ready(function() {
   articleDisplay.populateFilters();
   articleDisplay.authorSort();
+  articleDisplay.categorySort();
 //Call methods
 });
