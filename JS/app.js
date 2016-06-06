@@ -8,6 +8,7 @@ function ArticleObj(art) {
   this.link = art.link;
   this.publishedOn = art.publishedOn;
   this.category = art.category;
+  this.author = art.author;
   articleContent.push(this);
 };
 
@@ -18,7 +19,9 @@ ArticleObj.prototype.contentDisplay = function () {
   $section.find('img').attr('src', this.imgPath);
   $section.find('p').html(this.about);
   $section.find('a').attr('href', this.link).text(this.title + ' Repository');
-  $section.find('nav p').text('Published ' + this.publishedOn);
+  $section.find('nav p:first-child').text('By ' + this.author);
+  $section.find('nav > p:last-of-type').text('Published ' + this.publishedOn);
+  // $section.find('nav ')'Published ' + this.publishedOn);
 
   $section.removeClass('newArticle');
   $section.addClass('articleContent');
