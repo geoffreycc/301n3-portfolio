@@ -3,37 +3,34 @@ var articleDisplay = {};
 articleDisplay.populateFilters = function() {
   $('#projects > article').each(function() {
     if ($(this).hasClass('articleContent')) {
-      var optionAuthContent = ($(this).find('h2').attr('data-author'));
+      var optionAuthContent = ($(this).attr('data-author'));
       var newAuthOptionTag = '<option value="' + optionAuthContent + '">' + optionAuthContent + '</option>';
       if ($('#author-sort option[value="' + optionAuthContent + '"]').length === 0) {
         $('#author-sort').append(newAuthOptionTag);
       }
 
-      var optionCatContent = ($(this).find('h2').attr('data-category'));
-      console.log(optionCatContent);
+      var optionCatContent = ($(this).attr('data-category'));
       var newCatOptionTag = '<option value="' + optionCatContent + '">' + optionCatContent + '</option>';
-      console.log(newCatOptionTag);
       if ($('#category-sort option[value="' + optionCatContent + '"]').length === 0) {
-        console.log(($('#category-sort option[value="' + optionCatContent + '"]').length === 0));
-        console.log('okay');
         $('#category-sort').append(newCatOptionTag);
       }
     }
   });
 };
-//         }
-//
-//       // $('#author-sort').append($('.autSort').clone().text($(this).find($('nav p:first-child')).text())); //This is wonky
-//       // $newAuthor.text($(this).find)('nav p:first-child').text();
-//       // $newAuthor.removeClass('autSort');
-//
-//   }
-// });
-// }}
 
 articleDisplay.authorSort = function() {
+  $('#author-sort').on('change', function() {
+    var $authChoice = $(this).val();
+    console.log($authChoice);
+    $('article').hide();
+    if ($authChoice) {
+      $('article[data-author="' + $authChoice + '"]').fadeIn(500);
+    } else {
+      $('.articleContent').fadeIn(500);
+    }
+    $('#category-sort').val('');
+  });
 //Show only selected author's articles.
-  $('#author-sort');
 };
 
 articleDisplay.categorySort = function() {
@@ -51,5 +48,7 @@ articleDisplay.teaserControl = function() {
 };
 
 $(document).ready(function() {
+  articleDisplay.populateFilters();
+  articleDisplay.authorSort();
 //Call methods
 });
