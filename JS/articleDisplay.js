@@ -3,23 +3,21 @@ var articleDisplay = {};
 articleDisplay.populateFilters = function() {
   $('#projects > article').each(function() {
     if ($(this).hasClass('articleContent')) {
-      // var $newOption = $('#author-sort :first-child').clone();
-      // ($newOption).text($(this).find('h2').attr('data-author'));
-      var optionContent = ($(this).find('h2').attr('data-author'));
-      var newOptionTag = '<option value="' + optionContent + '">' + optionContent + '</option>';
-      console.log(newOptionTag);
-      if ($('#author-sort option[value="' + optionContent + '"]').length === 0) {
-        console.log('Okay');
-        $('#author-sort').append(newOptionTag);
+      var optionAuthContent = ($(this).find('h2').attr('data-author'));
+      var newAuthOptionTag = '<option value="' + optionAuthContent + '">' + optionAuthContent + '</option>';
+      if ($('#author-sort option[value="' + optionAuthContent + '"]').length === 0) {
+        $('#author-sort').append(newAuthOptionTag);
       }
-      // if (!$('#author-sort option:contains(' + ($newOption).text() + ')')) {
-      // // '[value ="' + $newOption + '"]').length < 1) {
-      //   $('#author-sort').append($newOption);
-      // }
-      // '<option>' + $(this).find('h2').attr('data-author') + '</option>'; from above line
-      // $('#author-sort option').each(function() {
-      //.length === 0
-      // });
+
+      var optionCatContent = ($(this).find('h2').attr('data-category'));
+      console.log(optionCatContent);
+      var newCatOptionTag = '<option value="' + optionCatContent + '">' + optionCatContent + '</option>';
+      console.log(newCatOptionTag);
+      if ($('#category-sort option[value="' + optionCatContent + '"]').length === 0) {
+        console.log(($('#category-sort option[value="' + optionCatContent + '"]').length === 0));
+        console.log('okay');
+        $('#category-sort').append(newCatOptionTag);
+      }
     }
   });
 };

@@ -15,7 +15,7 @@ function ArticleObj(art) {
 ArticleObj.prototype.contentDisplay = function () {
   var $section = $('.newArticle').clone();
 
-  $section.find('h2').text(this.title).attr('category', this.category).attr('data-author', this.author);
+  $section.find('h2').text(this.title).attr('data-category', this.category).attr('data-author', this.author);
   $section.find('img').attr('src', this.imgPath);
   $section.find('p').html(this.about);
   $section.find('a').attr('href', this.link).text(this.title + ' Repository');
