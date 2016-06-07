@@ -46,6 +46,13 @@ articleDisplay.categorySort = function() {
 
 articleDisplay.topNavBar = function() {
 //Show only articles or only about section on click
+  $('header nav').on('click', 'li', function(e) {
+    e.preventDefault();
+    console.log($(this).children().attr('data-link'));
+    var $link = $(this).children().attr('data-link');
+    $('article').hide();
+    $('.' + $link).fadeIn(500);
+  });
   $('header nav');
 };
 
@@ -57,5 +64,6 @@ $(document).ready(function() {
   articleDisplay.populateFilters();
   articleDisplay.authorSort();
   articleDisplay.categorySort();
-//Call methods
+  articleDisplay.topNavBar();
+  articleDisplay.teaserControl();
 });
