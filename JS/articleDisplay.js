@@ -52,6 +52,14 @@ articleDisplay.topNavBar = function() {
     var $link = $(this).children().attr('data-link');
     $('article').hide();
     $('.' + $link).fadeIn(500);
+    console.log($(this));
+    console.log($link);
+    console.log($('.' + $link));
+    if ($link === 'aboutSite') {
+      $('.filterSelect').hide();
+    } else {
+      $('.filterSelect').fadeIn(500);
+    }
   });
   $('header nav');
 };
