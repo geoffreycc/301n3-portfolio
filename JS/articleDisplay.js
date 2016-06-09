@@ -62,7 +62,7 @@ articleDisplay.topNavBar = function() {
       $('.filterSelect').fadeIn(500);
     }
   });
-  // $('header nav');
+  $('header nav .links:first').click();
 };
 
 articleDisplay.teaserControl = function() {
