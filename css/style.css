@@ -48,7 +48,13 @@ h1 {
   color: #E84A5F;
 }
 
-a{
+a {
   color: #E08E79;
   text-decoration: none;
+}
+
+.icon-menu {
+  font-size: 10em;
+  float:right;
+  color: #E08E79;
 }
