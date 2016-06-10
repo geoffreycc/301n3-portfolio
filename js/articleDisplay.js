@@ -70,7 +70,7 @@ articleDisplay.teaserControl = function() {
 };
 
 articleDisplay.hamburgerControl = function() {
-  $('.icon-menu').on('click', function(e) {
+  $('.icon-menu').on('click', function() {
     $('nav').toggle();
   });
 };
@@ -81,5 +81,5 @@ $(document).ready(function() {
   articleDisplay.categorySort();
   articleDisplay.topNavBar();
   articleDisplay.teaserControl();
-  acticleDisplay.hamburgerControl();
+  articleDisplay.hamburgerControl();
 });

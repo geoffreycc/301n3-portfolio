@@ -57,10 +57,18 @@ a {
   font-size: 10em;
   float:right;
   color: #E08E79;
+  z-index: 10;
+}
+
+nav {
+  display: none;
 }
 
 @media only screen and (min-width: 640px) {
   .icon-menu {
     display: none;
+  }
+  nav {
+    display: block;
   }
 }
