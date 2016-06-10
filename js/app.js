@@ -3,7 +3,7 @@ var articleContent = [];
 function ArticleObj(art) {
   this.title = art.title;
   this.imgName = art.imgName;
-  this.imgPath = 'images/' + art.imgName + '.jpg';
+  this.imgPath = 'Images/' + art.imgName + '.jpg';
   this.about = art.about;
   this.link = art.link;
   this.publishedOn = art.publishedOn;
