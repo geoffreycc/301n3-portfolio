@@ -69,10 +69,17 @@ articleDisplay.teaserControl = function() {
 //Change from partial to full view of article
 };
 
+articleDisplay.hamburgerControl = function() {
+  $('.icon-menu').on('click', function(e) {
+    $('nav').toggle();
+  });
+};
+
 $(document).ready(function() {
   articleDisplay.populateFilters();
   articleDisplay.authorSort();
   articleDisplay.categorySort();
   articleDisplay.topNavBar();
   articleDisplay.teaserControl();
+  acticleDisplay.hamburgerControl();
 });
