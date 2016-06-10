@@ -54,10 +54,9 @@ a {
 }
 
 .icon-menu {
-  font-size: 10em;
+  font-size: 6em;
   float:right;
   color: #E08E79;
-  z-index: 10;
 }
 
 nav {
