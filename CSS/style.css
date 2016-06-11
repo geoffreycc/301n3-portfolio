@@ -1,0 +1,43 @@
+body {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #ECE5CE;
+}
+
+.articleContent {
+  text-align: left;
+  margin: 2em;
+  background-color: #F1D4AF;
+}
+
+.articleContent h2 {
+  text-align: center;
+  padding-top: 0.5em;
+  font-size: 2.5em;
+  color: #E84A5F;
+}
+
+.articleContent a {
+  float: right;
+}
+
+.articleContent p {
+  max-width: 40em;
+  display: inline-block;
+  margin: 1em;
+}
+
+.articleContent img {
+  margin: 2em;
+}
+
+h1 {
+  font-size: 4em;
+  color: #E84A5F;
+}
+
+a{
+  color: #E08E79;
+  text-decoration: none;
+}
