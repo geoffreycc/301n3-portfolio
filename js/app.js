@@ -28,13 +28,13 @@ ArticleObj.prototype.contentDisplay = function () {
   // $section.addClass('articleContent');
   //
   // return $section;
-  console.log('contentDisplay ran');
+  // console.log('contentDisplay ran');
   var templateIndex = $('#blogArticle').html();
-  console.log(templateIndex);
+  // console.log(templateIndex);
   var template = Handlebars.compile(templateIndex);
-  console.log(template);
+  // console.log(template);
   return template(this);
-  console.log(this + 'Here is this');
+  // console.log(this + 'Here is this');
 };
 
 $(document).ready(function() {
