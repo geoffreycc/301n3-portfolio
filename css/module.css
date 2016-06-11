@@ -1,0 +1,40 @@
+.articleContent h2 {
+  text-align: center;
+  padding-top: 0.5em;
+  font-size: 2.5em;
+  color: #E84A5F;
+}
+
+.articleContent a {
+  float: right;
+}
+
+.articleContent p {
+  max-width: 40em;
+  display: inline-block;
+  margin: 1em;
+}
+
+.articleContent img {
+  margin: 2em;
+  max-width: 80%;
+}
+
+.icon-menu {
+  font-size: 6em;
+  float:right;
+  color: #E08E79;
+}
+
+@media only screen and (min-width: 640px) {
+  body {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .icon-menu {
+    display: none;
+  }
+  nav {
+    display: block;
+  }
+}
