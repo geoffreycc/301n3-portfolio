@@ -6,7 +6,22 @@
     <meta name="viewport" content='width=content-width initial-scale=1'>
     <link rel="stylesheet" href="/css/icons.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
+    <script id="blogArticle" type="text/x-handlebars-template">
+      <article class='newArticle' data-author={{author}} data-category={{category}}>
+        <header>
+          <h2 data-category={{category}} data-author={{author}} >{{title}}</h2>
+        </header>
+        <main>
+          <img src={{path}}/>
+          <p>{{about}}</p>
+        </main>
+        <nav>
+          <p>By {{author}}</p>
+          <p>Published {{publishedOn}}</p>
+          <a href={{link}} class='links'>{{title}} Repository</a>
+        </nav>
+      </article>
+    </script>
   </head>
   <body>
     <header>
@@ -32,7 +47,7 @@
         </select>
       </section>
       <section id='projects'>
-        <article class='newArticle'>
+        <!-- <article class='newArticle'>
           <header>
             <h2></h2>
           </header>
@@ -45,12 +60,13 @@
             <p></p>
             <a href="" class='links'></a>
           </nav>
-        </article>
+        </article> -->
       </section>
     </main>
     <footer>
-
     </footer>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script type="text/javascript" src="js/article.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/articleDisplay.js"></script>
