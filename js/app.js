@@ -28,15 +28,21 @@ ArticleObj.prototype.contentDisplay = function () {
   // $section.addClass('articleContent');
   //
   // return $section;
+  console.log('contentDisplay ran');
   var templateIndex = $('#blogArticle').html();
+  console.log(templateIndex);
   var template = Handlebars.compile(templateIndex);
+  console.log(template);
   return template(this);
+  console.log(this + 'Here is this');
 };
 
-articles.forEach(function(ele){
-  var art = new ArticleObj(ele);
-});
+$(document).ready(function() {
+  articles.forEach(function(ele){
+    var art = new ArticleObj(ele);
+  });
 
-articleContent.forEach(function(ar) {
-  $('#projects').append(ar.contentDisplay());
+  articleContent.forEach(function(ar) {
+    $('#projects').append(ar.contentDisplay());
+  });
 });

@@ -3,17 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>Geoffrey Cox</title>
-    <meta name="viewport" content='width=content-width initial-scale=1'>
+    <meta name="viewport" content='width=device-width initial-scale=1'>
     <link rel="stylesheet" href="/css/icons.css">
     <link rel="stylesheet" href="css/style.css">
 
     <script id="blogArticle" type="text/x-handlebars-template">
-      <article class='newArticle' data-author={{author}} data-category={{category}}>
+      <article class="articleContent" data-author={{author}} data-category={{category}}>
         <header>
-          <h2 data-category={{category}} data-author={{author}} >{{title}}</h2>
+          <h2 data-category={{category}} data-author={{author}}>{{title}}</h2>
         </header>
         <main>
-          <img src={{path}}/>
+          <img src={{imgPath}}/>
           <p>{{about}}</p>
         </main>
         <nav>
@@ -23,6 +23,7 @@
         </nav>
       </article>
     </script>
+
   </head>
   <body>
     <header>
@@ -47,7 +48,7 @@
           <option value='' class='catSort'>--Select Category--</option>
         </select>
       </section>
-      <section id='projects'>
+      <div id='projects'>
         <!-- <article class='newArticle'>
           <header>
             <h2></h2>
