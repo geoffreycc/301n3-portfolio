@@ -48,7 +48,30 @@ h1 {
   color: #E84A5F;
 }
 
-a{
+a {
   color: #E08E79;
   text-decoration: none;
+}
+
+.icon-menu {
+  font-size: 6em;
+  float:right;
+  color: #E08E79;
+}
+
+nav {
+  display: none;
+}
+
+@media only screen and (min-width: 640px) {
+  body {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .icon-menu {
+    display: none;
+  }
+  nav {
+    display: block;
+  }
 }
