@@ -19,7 +19,7 @@
           <img src='{{imgPath}}'>
           <p>{{about}}</p>
         </div>
-        <nav>
+        <nav id="lowNav">
           <p>By {{author}}</p>
           <p>Published {{publishedOn}}</p>
           <a href='{{link}}' class='links'>{{title}} Repository</a>
@@ -30,14 +30,17 @@
   </head>
   <body>
     <header>
-      <div id='hamburger' class='icon-menu'></div>
-      <h1>My Code Portfolio</h1>
+      <div id='hamburger' class='icon-menu'>
       <nav id="topNav">
-        <li><a href='' data-link='articleContent' class='links icon-home3'> Home</a></li>
-        <li><a href='' data-link='aboutSite' class='links icon-rocket'> About</a></li>
-        <li><a href='https://www.linkedin.com/' class='link icon-link'> linkedin</a></li>
-        <li><a href='https://github.com/geoffreycc' class='link icon-github'> github</a></li>
+        <ul>
+          <li><a href='' data-link='articleContent' class='links icon-home3'> Home</a></li>
+          <li><a href='' data-link='aboutSite' class='links icon-rocket'> About</a></li>
+          <li><a href='https://www.linkedin.com/' class='link icon-link'> linkedin</a></li>
+          <li><a href='https://github.com/geoffreycc' class='link icon-github'> github</a></li>
+        </ul>
       </nav>
+    </div>
+    <h1>My Code Portfolio</h1>
     </header>
     <main>
       <article id='about' class='aboutSite'>

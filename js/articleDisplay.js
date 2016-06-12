@@ -72,6 +72,14 @@ articleDisplay.hamburgerControl = function() {
   });
 };
 
+$(window).resize(function() {
+  if (window.innerWidth > 640) {
+    $('#topNav').show();
+  } else {
+    $('#topNav').hide();
+  };
+});
+
 $(document).ready(function() {
   articleDisplay.populateFilters();
   articleDisplay.authorSort();

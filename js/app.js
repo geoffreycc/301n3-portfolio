@@ -33,11 +33,3 @@ $(document).ready(function() {
     $('#projects').append(ar.contentDisplay());
   });
 });
-
-$(window).resize(function() {
-  if (window.innerWidth > 640) {
-    $('#topNav').show();
-  } else {
-    $('#topNav').hide();
-  };
-});
