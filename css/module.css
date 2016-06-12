@@ -26,6 +26,19 @@
   color: #E08E79;
 }
 
+
+.articleContent {
+  text-align: left;
+  margin: 2em;
+  background-color: #F1D4AF;
+}
+
+.icon-menu {
+  font-size: 6em;
+  float:right;
+  color: #E08E79;
+}
+
 /*lose margin when shrinking screen size*/
 
 @media only screen and (min-width: 640px) {
