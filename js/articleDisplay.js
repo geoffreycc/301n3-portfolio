@@ -71,7 +71,7 @@ articleDisplay.teaserControl = function() {
 
 articleDisplay.hamburgerControl = function() {
   $('.icon-menu').on('click', function() {
-    $('nav').toggle();
+    $('#topNav').toggle();
   });
 };
 
