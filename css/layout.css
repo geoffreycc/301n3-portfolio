@@ -1,0 +1,11 @@
+.articleContent {
+  text-align: left;
+  margin: 2em;
+  background-color: #F1D4AF;
+}
+
+.icon-menu {
+  font-size: 6em;
+  float:right;
+  color: #E08E79;
+}

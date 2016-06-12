@@ -1,0 +1,25 @@
+body {
+  /*margin: 0 auto;*/
+  text-align: center;
+  background-color: #ECE5CE;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+  padding-right: 1em;
+}
+
+h1 {
+  font-size: 4em;
+  color: #E84A5F;
+}
+
+a {
+  color: #E08E79;
+  text-decoration: none;
+}
+
+nav {
+  display: none;
+}
