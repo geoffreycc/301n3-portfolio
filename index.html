@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Geoffrey Cox</title>
     <meta name="viewport" content='width=device-width initial-scale=1'>
+    <link rel="stylesheet" href="vendor/styles/normalize.css">
     <link rel="stylesheet" href="/css/icons.css">
     <!-- <link rel="stylesheet" href="css/style.css"> -->
     <link rel="stylesheet" href="css/base.css">
@@ -11,18 +12,18 @@
     <link rel="stylesheet" href="/css/module.css">
 
     <script id="blogArticle" type="text/x-handlebars-template">
-      <article class="articleContent" data-author={{author}} data-category={{category}}>
+      <article class="articleContent" data-author='{{author}}' data-category='{{category}}'>
         <header>
-          <h2 data-category={{category}} data-author={{author}}>{{title}}</h2>
+          <h2 data-category='{{category}}' data-author='{{author}}'>{{title}}</h2>
         </header>
-        <main>
-          <img src={{imgPath}}>
+        <!-- <main> remove main - only one main in document -->
+          <img src='{{imgPath}}'>
           <p>{{about}}</p>
         </main>
         <nav>
           <p>By {{author}}</p>
           <p>Published {{publishedOn}}</p>
-          <a href={{link}} class='links'>{{title}} Repository</a>
+          <a href='{{link}}' class='links'>{{title}} Repository</a>
         </nav>
       </article>
     </script>
@@ -51,7 +52,7 @@
           <option value='' class='catSort'>--Select Category--</option>
         </select>
       </section>
-      <div id='projects'>
+      <div id='projects'></div>
         <!-- <article class='newArticle'>
           <header>
             <h2></h2>
@@ -66,10 +67,10 @@
             <a href="" class='links'></a>
           </nav>
         </article> -->
-      </section>
+      <!-- </section> -->
     </main>
-    <footer>
-    </footer>
+    <!-- <footer> This is empty!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    </footer> -->
     <script src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script type="text/javascript" src="js/article.js"></script>
