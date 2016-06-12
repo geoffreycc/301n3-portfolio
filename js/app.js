@@ -45,8 +45,8 @@ $(document).ready(function() {
 // new version
 $(window).resize(function() {
   if (window.innerWidth > 640) {
-    $('nav').show();
+    $('#topNav').show();
   } else {
-    $('nav').hide();
+    $('#topNav').hide();
   };
 });
