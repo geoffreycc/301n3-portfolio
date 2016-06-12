@@ -10,6 +10,7 @@ a {
 
 body {
   text-align: center;
+  margin: auto -1em;
 }
 
 li {

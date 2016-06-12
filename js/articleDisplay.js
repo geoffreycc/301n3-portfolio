@@ -66,6 +66,9 @@ articleDisplay.teaserControl = function() {
 articleDisplay.hamburgerControl = function() {
   $('.icon-menu').on('click', function() {
     $('#topNav').toggle();
+    $('.links').on('click', function() {
+      $('#topNav').hide();                      //This may not be working quite as intended.
+    });
   });
 };
 

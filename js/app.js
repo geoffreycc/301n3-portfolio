@@ -18,6 +18,12 @@ ArticleObj.prototype.contentDisplay = function () {
   return template(this);
 };
 
+ArticleObj.prototype.setDates = function () {
+  //Create method to make new dates
+};
+
+//Create a method to sort articles by date so that the most recent is presented first.
+
 $(document).ready(function() {
   articles.forEach(function(ele){
     var art = new ArticleObj(ele);
