@@ -45,17 +45,11 @@ articleDisplay.categorySort = function() {
 };
 
 articleDisplay.topNavBar = function() {
-//Show only articles or only about section on click
   $('.links').on('click', function(e) {
     e.preventDefault();
-    // console.log(this);
-    // console.log($(this).children().attr('data-link'));
     var $link = $(this).attr('data-link');
     $('article').hide();
     $('.' + $link).fadeIn(500);
-    // console.log($(this)[0]);
-    // console.log($link);
-    // console.log($('.' + $link));
     if ($link === 'aboutSite') {
       $('.filterSelect').hide();
     } else {

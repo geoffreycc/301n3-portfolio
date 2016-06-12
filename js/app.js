@@ -28,21 +28,6 @@ $(document).ready(function() {
   });
 });
 
-// fix nav disappear when toggle off and resize
-
-// this is jacobs solution
-
-// $(window).resize(function() {
-//  if (window.innerWidth > 640) {
-//    $('#navBar').show(); just select nav
-//  } else {
-//    $('#navBar').hide();
-//  };
-// });
-
-// check mobile nav display default, should be display none
-
-// new version
 $(window).resize(function() {
   if (window.innerWidth > 640) {
     $('#topNav').show();
