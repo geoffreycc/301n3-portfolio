@@ -6,7 +6,6 @@
     <meta name="viewport" content='width=device-width initial-scale=1'>
     <link rel="stylesheet" href="vendor/styles/normalize.css">
     <link rel="stylesheet" href="/css/icons.css">
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="/css/layout.css">
     <link rel="stylesheet" href="/css/module.css">
@@ -16,10 +15,10 @@
         <header>
           <h2 data-category='{{category}}' data-author='{{author}}'>{{title}}</h2>
         </header>
-        <!-- <main> remove main - only one main in document -->
+        <div>
           <img src='{{imgPath}}'>
           <p>{{about}}</p>
-        </main>
+        </div>
         <nav>
           <p>By {{author}}</p>
           <p>Published {{publishedOn}}</p>
@@ -53,24 +52,8 @@
         </select>
       </section>
       <div id='projects'></div>
-        <!-- <article class='newArticle'>
-          <header>
-            <h2></h2>
-          </header>
-          <main>
-            <img src=""/>
-            <p></p>
-          </main>
-          <nav>
-            <p></p>
-            <p></p>
-            <a href="" class='links'></a>
-          </nav>
-        </article> -->
-      <!-- </section> -->
     </main>
-    <!-- <footer> This is empty!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    </footer> -->
+    <!-- <footer></footer> -->
     <script src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script type="text/javascript" src="js/article.js"></script>
