@@ -45,17 +45,11 @@ articleDisplay.categorySort = function() {
 };
 
 articleDisplay.topNavBar = function() {
-//Show only articles or only about section on click
   $('.links').on('click', function(e) {
     e.preventDefault();
-    // console.log(this);
-    // console.log($(this).children().attr('data-link'));
     var $link = $(this).attr('data-link');
     $('article').hide();
     $('.' + $link).fadeIn(500);
-    // console.log($(this)[0]);
-    // console.log($link);
-    // console.log($('.' + $link));
     if ($link === 'aboutSite') {
       $('.filterSelect').hide();
     } else {
@@ -72,8 +66,19 @@ articleDisplay.teaserControl = function() {
 articleDisplay.hamburgerControl = function() {
   $('.icon-menu').on('click', function() {
     $('#topNav').toggle();
+    $('.links').on('click', function() {
+      $('#topNav').hide();                      //This may not be working quite as intended.
+    });
   });
 };
+
+$(window).resize(function() {
+  if (window.innerWidth > 640) {
+    $('#topNav').show();
+  } else {
+    $('#topNav').hide();
+  };
+});
 
 $(document).ready(function() {
   articleDisplay.populateFilters();

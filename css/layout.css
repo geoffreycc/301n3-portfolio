@@ -1,6 +1,7 @@
 h1 {
   font-size: 4em;
   color: #E84A5F;
+  text-align: left;
 }
 
 a {
@@ -17,6 +18,6 @@ li {
   padding-right: 1em;
 }
 
-#nav {
+#topNav {
   display: none;
 }

@@ -18,6 +18,12 @@ ArticleObj.prototype.contentDisplay = function () {
   return template(this);
 };
 
+ArticleObj.prototype.setDates = function () {
+  //Create method to make new dates
+};
+
+//Create a method to sort articles by date so that the most recent is presented first.
+
 $(document).ready(function() {
   articles.forEach(function(ele){
     var art = new ArticleObj(ele);
@@ -26,27 +32,4 @@ $(document).ready(function() {
   articleContent.forEach(function(ar) {
     $('#projects').append(ar.contentDisplay());
   });
-});
-
-// fix nav disappear when toggle off and resize
-
-// this is jacobs solution
-
-// $(window).resize(function() {
-//  if (window.innerWidth > 640) {
-//    $('#navBar').show(); just select nav
-//  } else {
-//    $('#navBar').hide();
-//  };
-// });
-
-// check mobile nav display default, should be display none
-
-// new version
-$(window).resize(function() {
-  if (window.innerWidth > 640) {
-    $('#topNav').show();
-  } else {
-    $('#topNav').hide();
-  };
 });

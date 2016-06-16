@@ -12,7 +12,7 @@
 .articleContent p {
   max-width: 40em;
   display: inline-block;
-  margin: 1em;
+  margin: 0.5em;
 }
 
 .articleContent img {
@@ -26,32 +26,52 @@
   color: #E08E79;
 }
 
-
 .articleContent {
   text-align: left;
-  margin: 2em;
   background-color: #F1D4AF;
 }
 
-.icon-menu {
-  font-size: 6em;
-  float:right;
-  color: #E08E79;
+#lowNav p {
+  display: block;
 }
 
-/*lose margin when shrinking screen size*/
+select {
+  background-color:#E08E79;
+  /*border-width: 1em;*/
+  border-color: #F1D4AF;
+  color: #F1D4Af;
+  /*color: #E84A5F;*/
+  -webkit-appearance: initial;
+  font-weight:
+}
+
+.icon-menu:before {
+  float: right;
+}
+
+#topNav a {
+  font-size: .3em;
+}
+
+ul {
+}
 
 @media only screen and (min-width: 640px) {
   body {
-    max-width: 960px;
-    /*change to a non pixel value 80-85%*/
     margin: 0 auto;
+  }
+  .articleContent {
+    margin: 2em;
   }
   .icon-menu {
     display: none;
   }
-  nav {
-    display: block;
-    /*this does not appear to be working*/
+
+  h1 {
+    text-align: center;
   }
+  /*#topNav {
+    display: block;
+  }*/
+
 }
