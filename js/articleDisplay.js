@@ -72,6 +72,22 @@ articleDisplay.hamburgerControl = function() {
   });
 };
 
+articleDisplay.checkLocal = function() {
+  if (localStorage.getItem('localArticles')) {
+    //get localContent
+  } else {
+    //create localContent
+  }
+};
+
+articleDisplay.getFromServer = function () {
+  //use AJAX to get content form json file
+};
+
+articleDisplay.checkLatest = function() {
+  //Check to see if local storage is up to date.
+};
+
 $(window).resize(function() {
   if (window.innerWidth > 640) {
     $('#topNav').show();
