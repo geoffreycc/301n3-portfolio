@@ -1,4 +1,4 @@
-var articles = [
+[
   {
     "title": "Pug Test",
     "imgName": "testPic",
