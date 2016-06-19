@@ -72,7 +72,6 @@ ArticleObj.getRawData = function() {
 
 $(document).ready(function() {
   ArticleObj.checkLocal();
-  ArticleObj.getFromServer();
   ArticleObj.all.forEach(function(ar) {
     $('#projects').append(ar.contentDisplay());
   });
