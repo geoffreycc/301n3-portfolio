@@ -24,20 +24,14 @@ ArticleObj.prototype.setDates = function() {
 };
 
 ArticleObj.checkLocal = function() {
-  // var rawData = [];
-  // if (localStorage.rawData) {
-  //   rawData = JSON.parse(localStorage.rawData); //
-  //   console.log('articleDisplay first if statement ran.');
-  //   //get localContent
-  // } else {
-  //   $.getJSON('/data/article.json', function(data) {
-  //     console.log(data);
-  //     localStorage.setItem('rawData', JSON.stringify(data));
-  //     console.log('articleDisplay else statement ran.');
-  //   }); //?
-  //
-  //   //create localContent
-  // }
+  if (localStorage.rawData) {
+    rawData = JSON.parse(localStorage.rawData);
+    console.log('rawData from the localStorage is ' + rawData);
+    ArticleObj.loadArticles(rawData);
+  } else {
+    ArticleObj.getRawData();
+    console.log('rawData gotten from .json file');
+  }
 };
 
 ArticleObj.loadArticles = function(rawData) {
@@ -54,7 +48,7 @@ ArticleObj.getRawData = function() {
   });
 };
 
-ArticleObj.getRawData();
+ArticleObj.checkLocal();
 
 //
 // articleDisplay.getFromServer = function () {
