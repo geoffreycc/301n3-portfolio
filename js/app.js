@@ -48,9 +48,8 @@ ArticleObj.getRawData = function() {
   });
 };
 
-ArticleObj.checkLocal();
 
-//
+
 // articleDisplay.getFromServer = function () {
 //   //use AJAX to get content form json file
 // };
@@ -60,14 +59,13 @@ ArticleObj.checkLocal();
 //   //Check to see if local storage is up to date.
 // };
 
-//Create a method to sort articles by date so that the most recent is presented first.
+// Create a method to sort articles by date so that the most recent is presented first.
 
-// $(document).ready(function() {
-//   articles.forEach(function(ele){
-//     var art = new ArticleObj(ele);
-//   });
+$(document).ready(function() {
 
-//   articleContent.forEach(function(ar) {
-//     $('#projects').append(ar.contentDisplay());
-//   });
-// });
+  ArticleObj.checkLocal();
+
+  ArticleObj.all.forEach(function(ar) {
+    $('#projects').append(ar.contentDisplay());
+  });
+});
