@@ -11,7 +11,7 @@ function ArticleObj(art) {
   ArticleObj.all.push(this);
 };
 
-ArticleObj.all = []; //was articleContent?
+ArticleObj.all = [];
 
 ArticleObj.prototype.contentDisplay = function() {
   var templateIndex = $('#blogArticle').html();
@@ -21,6 +21,7 @@ ArticleObj.prototype.contentDisplay = function() {
 
 ArticleObj.prototype.setDates = function() {
   //Create method to make new dates
+  //Organize articles by most recent dates.
 };
 
 ArticleObj.checkLocal = function() {
@@ -48,21 +49,30 @@ ArticleObj.getRawData = function() {
   });
 };
 
-// articleDisplay.getFromServer = function () {
-//   //use AJAX to get content form json file
+// ArticleObj.getFromServer = function () {
+//   $.ajax({
+//     url: 'data/article.json',
+//     method: 'HEAD'
+//   })
+//   .success(function(data, msg, xhr) {
+//     console.log('data is ' + data);
+//     console.log('msg is ' + msg);
+//     var xhr = new XMLHttpRequest();
+//     console.log('xhr is ' + xhr);
+//     var eTag = xhr.getResponseHeader();
+//     console.log(eTag);
+//   });
 // };
+//
 //
 // articleDisplay.checkLatest = function() {
 //   //getAjax head deal?
 //   //Check to see if local storage is up to date.
 // };
 
-// Create a method to sort articles by date so that the most recent is presented first.
-
 $(document).ready(function() {
-
   ArticleObj.checkLocal();
-
+  ArticleObj.getFromServer();
   ArticleObj.all.forEach(function(ar) {
     $('#projects').append(ar.contentDisplay());
   });
