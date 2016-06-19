@@ -48,8 +48,6 @@ ArticleObj.getRawData = function() {
   });
 };
 
-
-
 // articleDisplay.getFromServer = function () {
 //   //use AJAX to get content form json file
 // };
