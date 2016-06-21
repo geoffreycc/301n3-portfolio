@@ -61,11 +61,11 @@
 
   ArticleObj.articlesByAuthor = function() {
     ArticleObj.all.map(function(article) {
-      ArticleObj.all.reduce(function(a, b) {
-        if (a.author === b.author) {
-          return b.title;
-        }
-      });
+      return {
+        articleAuthor: article.author,
+        articleTitle: article.title,
+        articleCategory: article.category
+      };
     });
   };
 
@@ -73,6 +73,12 @@
 
   $(document).ready(function() {
     ArticleObj.checkLocal();
+    articleDisplay.populateFilters();//Does not work when there is nothing in localStorage on page load.
+    articleDisplay.authorSort();
+    articleDisplay.categorySort();
+    articleDisplay.topNavBar();
+    articleDisplay.teaserControl();
+    articleDisplay.hamburgerControl(); //Move into html script tag?
   });
 
 // Add in some map and reduce

@@ -84,11 +84,11 @@
   module.articleDisplay = articleDisplay;
 
   $(document).ready(function() {
-    articleDisplay.populateFilters();
-    articleDisplay.authorSort();
-    articleDisplay.categorySort();
-    articleDisplay.topNavBar();
-    articleDisplay.teaserControl();
-    articleDisplay.hamburgerControl();
+    // articleDisplay.populateFilters();
+    // articleDisplay.authorSort();
+    // articleDisplay.categorySort();
+    // articleDisplay.topNavBar();
+    // articleDisplay.teaserControl();
+    // articleDisplay.hamburgerControl();
   });
 })(window);
