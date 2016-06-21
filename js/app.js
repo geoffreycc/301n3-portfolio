@@ -38,6 +38,7 @@
     ArticleObj.all.forEach(function(ar) {
       $('#projects').append(ar.contentDisplay());
     });
+    articleDisplay.populateFilters();
   };
 
   ArticleObj.loadArticles = function(rawData) {
@@ -54,34 +55,39 @@
     });
   };
 
-  // ArticleObj.getFromServer = function () {
-  // };
-  //
-  // articleDisplay.checkLatest = function() {
-  // };
-
-  ArticleObj.newTest = function() {
-    ArticleObj.all.reduce(function(a, b) { //Use returned values to render links to completed projects to page on click
+  ArticleObj.reduceTest = function() {
+    ArticleObj.linkArr = ArticleObj.all.reduce(function(a, b){
       if (b.completed === 'true') {
         a.push({
-          title: b.title,
-          link: b.link,
+          link: '<li><a href="' + b.link + '" >' + b.title + '</a></li>',
         });
-      } console.log(a);
-    } , []);
+      } return a;
+    }, []);
+  };
+
+  ArticleObj.newTest = function() {
+    ArticleObj.all.map(function(article) {
+      return {
+        link: '<a href="' + article.link + '" >' + article.title + '</a>',
+        complete: article.completed
+      };
+    }).filter(function(article) {
+      if (article.complete === 'true') {
+        return article;
+      } else {
+        console.log(article);
+      }
+    });
   };
 
   module.ArticleObj = ArticleObj;
 
   $(document).ready(function() {
     ArticleObj.checkLocal();
-    articleDisplay.populateFilters();//Does not work when there is nothing in localStorage on page load.
     articleDisplay.authorSort();
     articleDisplay.categorySort();
     articleDisplay.topNavBar();
     articleDisplay.teaserControl();
-    articleDisplay.hamburgerControl(); //Move into html script tag?
-    ArticleObj.newTest();
+    articleDisplay.hamburgerControl();
   });
-
 })(window);
