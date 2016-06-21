@@ -60,23 +60,15 @@
   // articleDisplay.checkLatest = function() {
   // };
 
-  ArticleObj.completedProjects = function() {
-    ArticleObj.all.map(function(article) {
-      console.log('test');
-      return {
-        title: article.title,
-        link: article.link,
-        completed: article.completed
-      };
-    }).reduce(function(a, b) {
-      if (b.completed === 'true') {
-        a.push(b);
-      }
-      console.log(a[0]);
-    }, []);
-  };
-
   ArticleObj.newTest = function() {
+    ArticleObj.all.reduce(function(a, b) { //Use returned values to render links to completed projects to page on click
+      if (b.completed === 'true') {
+        a.push({
+          title: b.title,
+          link: b.link,
+        });
+      } console.log(a);
+    } , []);
   };
 
   module.ArticleObj = ArticleObj;
@@ -89,7 +81,7 @@
     articleDisplay.topNavBar();
     articleDisplay.teaserControl();
     articleDisplay.hamburgerControl(); //Move into html script tag?
-    ArticleObj.completedProjects();
+    ArticleObj.newTest();
   });
 
 })(window);
