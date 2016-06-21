@@ -6,7 +6,8 @@
     "link": "Test_One",
     "category": "Bunny",
     "author": "Human A. Person",
-    "publishedOn": "2013-12-09"
+    "publishedOn": "2013-12-09",
+    "completed": "true"
   },
   {
     "title": "Pug Test 2",

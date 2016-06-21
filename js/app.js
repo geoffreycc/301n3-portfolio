@@ -8,6 +8,7 @@
     this.publishedOn = art.publishedOn;
     this.category = art.category;
     this.author = art.author;
+    this.completed = art.completed;
     ArticleObj.all.push(this);
   };
 
@@ -59,14 +60,23 @@
   // articleDisplay.checkLatest = function() {
   // };
 
-  ArticleObj.articlesByAuthor = function() {
+  ArticleObj.completedProjects = function() {
     ArticleObj.all.map(function(article) {
+      console.log('test');
       return {
-        articleAuthor: article.author,
-        articleTitle: article.title,
-        articleCategory: article.category
+        title: article.title,
+        link: article.link,
+        completed: article.completed
       };
-    });
+    }).reduce(function(a, b) {
+      if (b.completed === 'true') {
+        a.push(b);
+      }
+      console.log(a[0]);
+    }, []);
+  };
+
+  ArticleObj.newTest = function() {
   };
 
   module.ArticleObj = ArticleObj;
@@ -79,8 +89,7 @@
     articleDisplay.topNavBar();
     articleDisplay.teaserControl();
     articleDisplay.hamburgerControl(); //Move into html script tag?
+    ArticleObj.completedProjects();
   });
-
-// Add in some map and reduce
 
 })(window);
