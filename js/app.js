@@ -27,56 +27,54 @@
   ArticleObj.checkLocal = function() {
     if (localStorage.rawData) {
       rawData = JSON.parse(localStorage.rawData);
-      console.log('rawData from the localStorage is ' + rawData);
       ArticleObj.loadArticles(rawData);
     } else {
       ArticleObj.getRawData();
-      console.log('rawData gotten from .json file');
     }
+  };
+
+  ArticleObj.renderProject = function() {
+    ArticleObj.all.forEach(function(ar) {
+      $('#projects').append(ar.contentDisplay());
+    });
   };
 
   ArticleObj.loadArticles = function(rawData) {
     rawData.map(function(ele) {
-      console.log(ele);
       return new ArticleObj(ele);
     });
+    ArticleObj.renderProject();
   };
 
   ArticleObj.getRawData = function() {
     $.getJSON('data/article.json', function(rawData) {
-      ArticleObj.loadArticles(rawData);
       localStorage.rawData = JSON.stringify(rawData);
+      ArticleObj.loadArticles(rawData);
     });
   };
 
   // ArticleObj.getFromServer = function () {
-  //   $.ajax({
-  //     url: 'data/article.json',
-  //     method: 'HEAD'
-  //   })
-  //   .success(function(data, msg, xhr) {
-  //     console.log('data is ' + data);
-  //     console.log('msg is ' + msg);
-  //     var xhr = new XMLHttpRequest();
-  //     console.log('xhr is ' + xhr);
-  //     var eTag = xhr.getResponseHeader();
-  //     console.log(eTag);
-  //   });
   // };
-  //
   //
   // articleDisplay.checkLatest = function() {
-  //   //getAjax head deal?
-  //   //Check to see if local storage is up to date.
   // };
+
+  ArticleObj.articlesByAuthor = function() {
+    ArticleObj.all.map(function(article) {
+      ArticleObj.all.reduce(function(a, b) {
+        if (a.author === b.author) {
+          return b.title;
+        }
+      });
+    });
+  };
 
   module.ArticleObj = ArticleObj;
 
   $(document).ready(function() {
     ArticleObj.checkLocal();
-    ArticleObj.all.forEach(function(ar) {
-      $('#projects').append(ar.contentDisplay());
-    });
   });
+
+// Add in some map and reduce
 
 })(window);
