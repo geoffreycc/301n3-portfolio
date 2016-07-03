@@ -86,8 +86,8 @@
     ArticleObj.checkLocal();
     articleDisplay.authorSort();
     articleDisplay.categorySort();
-    articleDisplay.topNavBar();
-    articleDisplay.teaserControl();
+    // articleDisplay.topNavBar();
+    // articleDisplay.teaserControl();
     articleDisplay.hamburgerControl();
   });
 })(window);
