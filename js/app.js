@@ -26,9 +26,9 @@
   };
 
   ArticleObj.checkLocal = function() {
-    if (localStorage.rawData) {
-      rawData = JSON.parse(localStorage.rawData);
-      ArticleObj.loadArticles(rawData);
+    if (localStorage.gCoxRawData) {
+      gCoxRawData = JSON.parse(localStorage.gCoxRawData);
+      ArticleObj.loadArticles(gCoxRawData);
     } else {
       ArticleObj.getRawData();
     }
@@ -41,17 +41,17 @@
     articleDisplay.populateFilters();
   };
 
-  ArticleObj.loadArticles = function(rawData) {
-    rawData.map(function(ele) {
+  ArticleObj.loadArticles = function(gCoxRawData) {
+    gCoxRawData.map(function(ele) {
       return new ArticleObj(ele);
     });
     ArticleObj.renderProject();
   };
 
   ArticleObj.getRawData = function() {
-    $.getJSON('data/article.json', function(rawData) {
-      localStorage.rawData = JSON.stringify(rawData);
-      ArticleObj.loadArticles(rawData);
+    $.getJSON('data/article.json', function(gCoxRawData) {
+      localStorage.gCoxRawData = JSON.stringify(gCoxRawData);
+      ArticleObj.loadArticles(gCoxRawData);
     });
   };
 
