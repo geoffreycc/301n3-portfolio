@@ -45,20 +45,20 @@
     });
   };
 
-  articleDisplay.topNavBar = function() {
-    $('.links').on('click', function(e) {
-      e.preventDefault();
-      var $link = $(this).attr('data-link');
-      $('article').hide();
-      $('.' + $link).fadeIn(500);
-      if ($link === 'aboutSite') {
-        $('.filterSelect').hide();
-      } else {
-        $('.filterSelect').fadeIn(500);
-      }
-    });
-    $('header nav .links:first').click();
-  };
+  // articleDisplay.topNavBar = function() {
+  //   $('.links').on('click', function(e) {
+  //     e.preventDefault();
+  //     var $link = $(this).attr('data-link');
+  //     $('article').hide();
+  //     $('.' + $link).fadeIn(500);
+  //     if ($link === 'aboutSite') {
+  //       $('.filterSelect').hide();
+  //     } else {
+  //       $('.filterSelect').fadeIn(500);
+  //     }
+  //   });
+  //   $('header nav .links:first').click();
+  // };
 
   articleDisplay.teaserControl = function() {
   //Change from partial to full view of article
