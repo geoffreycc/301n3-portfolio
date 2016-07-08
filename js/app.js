@@ -6,6 +6,7 @@
     this.about = art.about;
     this.link = art.link;
     this.publishedOn = new Date(art.publishedOn);
+    this.date = (this.publishedOn).toDateString(); //testing
     this.category = art.category;
     this.author = art.author;
     this.completed = art.completed;
