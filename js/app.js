@@ -5,7 +5,7 @@
     this.imgPath = 'images/' + art.imgName + '.jpg';
     this.about = art.about;
     this.link = art.link;
-    this.publishedOn = art.publishedOn;
+    this.publishedOn = new Date(art.publishedOn);
     this.category = art.category;
     this.author = art.author;
     this.completed = art.completed;
@@ -14,44 +14,46 @@
 
   ArticleObj.all = [];
 
+  ArticleObj.setDates = function(arr) {
+    arr.sort(function(a, b) {
+      return b.publishedOn - a.publishedOn;
+    });
+  };
+
   ArticleObj.prototype.contentDisplay = function() {
     var templateIndex = $('#blogArticle').html();
     var template = Handlebars.compile(templateIndex);
     return template(this);
   };
 
-  ArticleObj.prototype.setDates = function() {
-    //Create method to make new dates
-    //Organize articles by most recent dates.
-  };
-
   ArticleObj.checkLocal = function() {
-    if (localStorage.rawData) {
-      rawData = JSON.parse(localStorage.rawData);
-      ArticleObj.loadArticles(rawData);
+    if (localStorage.gCoxRawData) {
+      gCoxRawData = JSON.parse(localStorage.gCoxRawData);
+      ArticleObj.loadArticles(gCoxRawData);
     } else {
       ArticleObj.getRawData();
     }
   };
 
   ArticleObj.renderProject = function() {
+    ArticleObj.setDates(ArticleObj.all);
     ArticleObj.all.forEach(function(ar) {
       $('#projects').append(ar.contentDisplay());
     });
     articleDisplay.populateFilters();
   };
 
-  ArticleObj.loadArticles = function(rawData) {
-    rawData.map(function(ele) {
+  ArticleObj.loadArticles = function(gCoxRawData) {
+    gCoxRawData.map(function(ele) {
       return new ArticleObj(ele);
     });
     ArticleObj.renderProject();
   };
 
   ArticleObj.getRawData = function() {
-    $.getJSON('data/article.json', function(rawData) {
-      localStorage.rawData = JSON.stringify(rawData);
-      ArticleObj.loadArticles(rawData);
+    $.getJSON('data/article.json', function(gCoxRawData) {
+      localStorage.gCoxRawData = JSON.stringify(gCoxRawData);
+      ArticleObj.loadArticles(gCoxRawData);
     });
   };
 
