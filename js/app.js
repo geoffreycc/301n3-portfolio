@@ -27,16 +27,17 @@
     return template(this);
   };
 
-  ArticleObj.checkLocal = function() {
+  ArticleObj.checkLocal = function(ctx, next) {
     if (localStorage.gCoxRawData) {
-      gCoxRawData = JSON.parse(localStorage.gCoxRawData);
-      ArticleObj.loadArticles(gCoxRawData);
+      ctx.gCoxRawData = JSON.parse(localStorage.gCoxRawData);
+      ArticleObj.loadArticles(ctx.gCoxRawData);
     } else {
-      ArticleObj.getRawData();
+      ArticleObj.getRawData(ctx, next);
     }
+    next();
   };
 
-  ArticleObj.renderProject = function() {
+  ArticleObj.renderProject = function(ctx, next) { // use ctx object here rather than array. Might be better to assign ArticleObj.all to the ctx.articles.
     ArticleObj.setDates(ArticleObj.all);
     ArticleObj.all.forEach(function(ar) {
       $('#projects').append(ar.contentDisplay());
@@ -44,14 +45,14 @@
     articleDisplay.populateFilters();
   };
 
-  ArticleObj.loadArticles = function(gCoxRawData) {
-    gCoxRawData.map(function(ele) {
+  ArticleObj.loadArticles = function(ctx ,next) {
+    ctx.map(function(ele) {
       return new ArticleObj(ele);
     });
-    ArticleObj.renderProject();
+    ArticleObj.renderProject(ctx, next);
   };
 
-  ArticleObj.getRawData = function() {
+  ArticleObj.getRawData = function(ctx, next) {
     $.getJSON('data/article.json', function(gCoxRawData) {
       localStorage.gCoxRawData = JSON.stringify(gCoxRawData);
       ArticleObj.loadArticles(gCoxRawData);
@@ -85,12 +86,10 @@
 
   module.ArticleObj = ArticleObj;
 
-  $(document).ready(function() {
-    ArticleObj.checkLocal();
-    articleDisplay.authorSort();
-    articleDisplay.categorySort();
-    // articleDisplay.topNavBar();
-    // articleDisplay.teaserControl();
-    articleDisplay.hamburgerControl();
-  });
+  // $(document).ready(function() {
+  //   ArticleObj.checkLocal();
+  //   articleDisplay.authorSort();
+  //   articleDisplay.categorySort();
+  //   articleDisplay.hamburgerControl();
+  // });
 })(window);
