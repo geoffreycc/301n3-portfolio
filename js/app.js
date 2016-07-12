@@ -34,6 +34,8 @@
     } else {
       ArticleObj.getRawData(ctx, next);
     }
+    articleDisplay.authorSort();
+    articleDisplay.categorySort();
     next();
   };
 
@@ -86,10 +88,10 @@
 
   module.ArticleObj = ArticleObj;
 
-  // $(document).ready(function() {
+  $(document).ready(function() {
   //   ArticleObj.checkLocal();
   //   articleDisplay.authorSort();
   //   articleDisplay.categorySort();
-  //   articleDisplay.hamburgerControl();
-  // });
+    articleDisplay.hamburgerControl();
+  });
 })(window);
