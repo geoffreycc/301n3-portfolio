@@ -12,7 +12,7 @@
     $('article').hide();
     $('.filterSelect').hide();
     $('.aboutSite').fadeIn(500);
-    next();
+    // next();
   };
 
   control.displayRepoData = function() {
