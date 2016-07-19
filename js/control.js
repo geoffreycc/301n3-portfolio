@@ -8,19 +8,26 @@
     $('.articleContent').fadeIn(500);
   };
 
-  control.viewAbout = function(next) {
+  control.viewAbout = function(ctx, next) {
     $('article').hide();
     $('.filterSelect').hide();
     $('.aboutSite').fadeIn(500);
-    // next();
+    next();
   };
 
   control.displayRepoData = function() {
-    // some handlebars stuff
+    console.log('some handlebars stuff');
     var repoTem = $('#repoDetail').html();
     var Repotemplate = Handlebars.compile(repoTem);
-    return template(this);
+    var repoText = Repotemplate(gitControl.repos);
+    $('#repoLinks').append(repoText);
   };
+
+  // control.renderRepos = function() {
+  //   gitControl.repos.forEach(function(repo) {
+  //     control.displayRepoData(repo);
+  //   });
+  // };
 
   module.control = control;
 })(window);
