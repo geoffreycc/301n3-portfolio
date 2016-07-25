@@ -19,15 +19,16 @@
     console.log('some handlebars stuff');
     var repoTem = $('#repoDetail').html();
     var Repotemplate = Handlebars.compile(repoTem);
-    var repoText = Repotemplate(gitControl.repos);
+    var repoText = Repotemplate(this);
     $('#repoLinks').append(repoText);
   };
 
-  // control.renderRepos = function() {
-  //   gitControl.repos.forEach(function(repo) {
-  //     control.displayRepoData(repo);
-  //   });
-  // };
+  control.renderRepos = function(ctx) {
+    var repoSource = $('#repoDetail').html();
+    var repoTemplate = Handlebars.compile(repoSource);
+    var repoText = repoTemplate(ctx.repos);
+    $('#repoLinks').append(repoText);
+  };
 
   module.control = control;
 })(window);
