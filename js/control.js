@@ -8,18 +8,26 @@
     $('.articleContent').fadeIn(500);
   };
 
-  control.viewAbout = function(next) {
+  control.viewAbout = function(ctx, next) {
     $('article').hide();
     $('.filterSelect').hide();
     $('.aboutSite').fadeIn(500);
-    // next();
+    next();
   };
 
   control.displayRepoData = function() {
-    // some handlebars stuff
+    console.log('some handlebars stuff');
     var repoTem = $('#repoDetail').html();
     var Repotemplate = Handlebars.compile(repoTem);
-    return template(this);
+    var repoText = Repotemplate(this);
+    $('#repoLinks').append(repoText);
+  };
+
+  control.renderRepos = function(ctx) {
+    var repoSource = $('#repoDetail').html();
+    var repoTemplate = Handlebars.compile(repoSource);
+    var repoText = repoTemplate(ctx.repos);
+    $('#repoLinks').append(repoText);
   };
 
   module.control = control;

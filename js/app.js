@@ -39,7 +39,7 @@
     next();
   };
 
-  ArticleObj.renderProject = function(ctx, next) { // use ctx object here rather than array. Might be better to assign ArticleObj.all to the ctx.articles.
+  ArticleObj.renderProject = function(ctx, next) {
     ArticleObj.setDates(ArticleObj.all);
     ArticleObj.all.forEach(function(ar) {
       $('#projects').append(ar.contentDisplay());
@@ -89,9 +89,6 @@
   module.ArticleObj = ArticleObj;
 
   $(document).ready(function() {
-  //   ArticleObj.checkLocal();
-  //   articleDisplay.authorSort();
-  //   articleDisplay.categorySort();
     articleDisplay.hamburgerControl();
   });
 })(window);
